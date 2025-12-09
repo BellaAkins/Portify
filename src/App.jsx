@@ -1,12 +1,15 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import OnboardingProfession from "./OnboardingProfession";
 
 function App() {
   return (
     <>
-<h1 className='text-blue-900  text-5xl'>Hellooooooooo Babyyyyyyyy</h1>
+    <Navbar />
+    <OnboardingProfession />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
