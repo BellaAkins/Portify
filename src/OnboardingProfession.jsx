@@ -178,7 +178,3 @@ function ThemeScreen({ selected, setSelected }) {
     </>
   );
 }
-
-
-
-

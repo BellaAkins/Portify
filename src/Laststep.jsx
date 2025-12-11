@@ -66,12 +66,12 @@ export default function OnboardingFlow() {
 
 function ProfessionScreen({ selected, setSelected }) {
   const professions = [
-    { title: "Creative & Design", desc: "Designer, architect, photographer" },
-    { title: "Business & Consulting", desc: "Banker, consultant, analyst" },
-    { title: "Tech & Developers", desc: "Software engineer, IT specialist" },
-    { title: "Communications & Editorial", desc: "Journalist, writer, blogger" },
-    { title: "Education & Service", desc: "Teacher, trainer, counselor" },
-    { title: "Scientific & Research", desc: "Doctor, pharmacist, biologist" }
+       {title:"Creative & Design", desc:"Graphic Designer, Architect, Photographer, Fashion Designer, Art Director"},
+    {title: "Business & Consulting", desc: "Banker, Consultant, Marketing Director, Business Analyst"},
+    {title: "Tech & Developers", desc: "Software Engineer, IT Specialist, Web Developer, Technical Writer"},
+    {title: "Communications & Editorial", desc: "Journalist, Content Strategist, Editor, Blogger, Social Media Manager"},
+    {title: "Education & Service", desc: "Teacher, Event Planner, Personal Trainer, Real Estate Agent, Counselor"},
+    {title: "Scientific & Research", desc: "Microbiologists, Lab Techs, Medical Doctors, Professors, Pharmacists"},
   ];
 
   return (
