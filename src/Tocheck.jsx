@@ -21,7 +21,7 @@ export default function OnboardingFlow() {
 
       {/* Skip Button */}
       <button 
-        className="absolute top-6 right-6 text-blue-300 font-medium"
+        className="absolute top-6 right-6 text-blue-500 font-medium"
         onClick={skip}
       >
         Skip
@@ -104,9 +104,9 @@ function ProfessionScreen({ selected, setSelected }) {
 
 function GoalScreen({ selected, setSelected }) {
   const goals = [
-    { title: "Getting hired", desc: "Designed to impress recruiters and hiring managers (ATS system)" },
-    { title: "Attract Clients", desc: "Showcase services, pricing and client testimonials" },
-    { title: "Personal brand", desc: "A flexible site to share thoughts, projects and bio" },
+    { title: "Getting hired", desc: "Designed to impress hiring managers" },
+    { title: "Attract Clients", desc: "Showcase your services & testimonials" },
+    { title: "Personal brand", desc: "A flexible site for sharing bio & projects" },
   ];
 
   return (
@@ -139,12 +139,10 @@ function GoalScreen({ selected, setSelected }) {
 
 function ThemeScreen({ selected, setSelected }) {
   const themes = [
-    { title: "Minimalist", desc: "Clean lines, ample white space, high readability. Best for architects, writers." },
-    { title: "Bold", desc: "Vibrant colors, strong typography, unique layout Best for creatives, media." },
-    { title: "Professional", desc: "Structured clear hierarchy, focusing on data and detail. Best for academics, law." },
+    { title: "Minimalist", desc: "Clean lines, whitespace, readability." },
+    { title: "Bold", desc: "Vibrant colors, strong typography." },
+    { title: "Professional", desc: "Structured, detail-focused." },
   ];
-
-  
 
   return (
     <>
@@ -152,7 +150,7 @@ function ThemeScreen({ selected, setSelected }) {
         What aesthetic or theme will you be using?
       </h1>
       <p className="text-center text-gray-600 mb-10">
-       Pick a theme to define your typography, color palette, and initial design structure.
+        Pick a theme to define your typography, color palette, and layout.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
