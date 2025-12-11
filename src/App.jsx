@@ -1,13 +1,16 @@
 import { useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import OnboardingProfession from "./OnboardingProfession";
+import Laststep from "./Laststep";
+
+
 
 function App() {
   return (
     <>
     <Navbar />
-    <OnboardingProfession />
+    <Laststep />
+  
     </>
   );
 }

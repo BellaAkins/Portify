@@ -5,14 +5,14 @@ export default function OnboardingFlow() {
   const [selected, setSelected] = useState(null);
 
   const goNext = () => {
-    if (step < 3) {
+    if (step < 4) {
       setStep(step + 1);
       setSelected(null);
     }
   };
 
   const skip = () => {
-    setStep(3);
+    setStep(4);
     setSelected(null);
   };
 
@@ -29,24 +29,24 @@ export default function OnboardingFlow() {
 
       {/* Progress Bar */}
       <div className="flex justify-center gap-6 mb-10">
-        {[1,2,3].map((n) => (
+        {[1,2,3,4].map((n) => (
           <div
             key={n}
-            className={`
-              h-2 w-32 rounded-lg 
+            className={`h-2 w-24 rounded-lg 
               ${step === n ? "bg-blue-600" : "bg-gray-300"}
             `}
           />
         ))}
       </div>
 
-      {/* RENDER DIFFERENT SCREENS */}
+      {/* STEP SCREENS */}
       {step === 1 && <ProfessionScreen selected={selected} setSelected={setSelected} />}
       {step === 2 && <GoalScreen selected={selected} setSelected={setSelected} />}
       {step === 3 && <ThemeScreen selected={selected} setSelected={setSelected} />}
+      {step === 4 && <FinalScreen />}
 
-      {/* NEXT BUTTON */}
-      {step < 3 && (
+      {/* NEXT BUTTON (hidden on last step) */}
+      {step < 4 && (
         <div className="mt-12 flex justify-center">
           <button
             disabled={selected === null}
@@ -169,16 +169,38 @@ function ThemeScreen({ selected, setSelected }) {
           </div>
         ))}
       </div>
-
-      <div className="mt-12 flex justify-center">
-        <button className="px-10 py-3 border border-blue-400 rounded-xl text-blue-600 font-semibold">
-          Finish
-        </button>
-      </div>
     </>
   );
 }
 
+/* ------------------------------- STEP 4 (FINAL) ------------------------------- */
 
+function FinalScreen() {
+  return (
+    <>
+      <h1 className="text-center text-3xl font-semibold mb-6">
+        How would you like to start?
+      </h1>
 
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
 
+        <div
+          onClick={() => alert("Start building with blank template")}
+          className="cursor-pointer p-8 bg-white border border-gray-300 rounded-xl 
+                     shadow-sm text-center hover:scale-[1.02] transition"
+        >
+          <h2 className="text-xl font-semibold mb-2">Start with a Blank Template</h2>
+        </div>
+
+        <div
+          onClick={() => alert("Upload flow")}
+          className="cursor-pointer p-8 bg-white border border-gray-300 rounded-xl 
+                     shadow-sm text-center hover:scale-[1.02] transition"
+        >
+          <h2 className="text-xl font-semibold mb-2">Upload your CV / Portfolio</h2>
+        </div>
+
+      </div>
+    </>
+  );
+}
