@@ -66,7 +66,7 @@ export default function OnboardingFlow() {
 
 function ProfessionScreen({ selected, setSelected }) {
   const professions = [
-       {title:"Creative & Design", desc:"Graphic Designer, Architect, Photographer, Fashion Designer, Art Director"},
+    {title:"Creative & Design", desc:"Graphic Designer, Architect, Photographer, Fashion Designer, Art Director"},
     {title: "Business & Consulting", desc: "Banker, Consultant, Marketing Director, Business Analyst"},
     {title: "Tech & Developers", desc: "Software Engineer, IT Specialist, Web Developer, Technical Writer"},
     {title: "Communications & Editorial", desc: "Journalist, Content Strategist, Editor, Blogger, Social Media Manager"},
@@ -179,7 +179,7 @@ function FinalScreen() {
   return (
     <>
       <h1 className="text-center text-3xl font-semibold mb-6">
-        How would you like to start?
+       Will you be starting on a blank template?
       </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
@@ -189,15 +189,15 @@ function FinalScreen() {
           className="cursor-pointer p-8 bg-white border border-gray-300 rounded-xl 
                      shadow-sm text-center hover:scale-[1.02] transition"
         >
-          <h2 className="text-xl font-semibold mb-2">Start with a Blank Template</h2>
+          <h2 className="text-xl font-semibold mb-2">Yes, I am starting with a blank Template</h2>
         </div>
 
         <div
-          onClick={() => alert("Upload flow")}
+          onClick={() => alert("Upload CV / Portfolio")}
           className="cursor-pointer p-8 bg-white border border-gray-300 rounded-xl 
                      shadow-sm text-center hover:scale-[1.02] transition"
         >
-          <h2 className="text-xl font-semibold mb-2">Upload your CV / Portfolio</h2>
+          <h2 className="text-xl font-semibold mb-2">No, I want to upload my CV / portfolio</h2>
         </div>
 
       </div>
