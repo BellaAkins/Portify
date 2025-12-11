@@ -1,11 +1,11 @@
-/*
+
 import { div } from "framer-motion/client";
 import {useState} from "react";
 
 const [selected, setSelected] = useState(null);
 
 
-/*FIRST STEP
+/*FIRST STEP*/
 function ProfessionScreen({ selected, setSelected }) {
 const professions = [
     {title:"Creative & Design", description:"Graphic Designer, Architect, Photographer, Fashion Designer, Art Director"},
@@ -26,11 +26,18 @@ return (
 <div>
 
     {
-        professions.map(() => ())
+        professions.map((item, index) =>(
+            <div
+            key={index}
+            onClick={() => setSelected(index)}
+            className="" >
+                <h2 className="text-xl font-semibold mb-3">{item.title}</h2>
+                <p className="text-sm ">{item.description}</p>
+
+            </div>
+        ) )
     }
 </div>
 
   </>
 )
-
-*/
