@@ -1,17 +1,11 @@
 import { useState } from "react";
 import "./App.css";
-import Navbar from "./components/Navbar";
-import Landingpage from "./Landingpage.jsx";
-
-
-
+import Lp from "./Lp";
 
 function App() {
   return (
     <>
-    <Navbar />
-   <Landingpage />
-  
+      <Lp />
     </>
   );
 }
