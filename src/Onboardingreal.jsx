@@ -20,7 +20,7 @@ export default function OnboardingFlow() {
     <div className="min-h-screen bg-gray-100 px-6 py-10 relative">
       {/* Skip Button */}
       <button
-        className="absolute top-16 right-5 text-white bg-[#1ABCFE] font-regular px-3 py-1"
+        className="absolute top-2 right-5 text-white bg-[#1ABCFE] font-regular px-4 py-1"
         onClick={skip}
       >
         Skip
@@ -37,7 +37,7 @@ export default function OnboardingFlow() {
                 setSelected(null);
               }
             }}
-            className={`h-2 w-48 rounded-lg cursor-pointer transition
+            className={`h-2 w-58 rounded-lg cursor-pointer transition
         ${step === n ? "bg-[#1C3B5E]" : "bg-gray-300 hover:bg-gray-400"}
       `}
           />
@@ -62,7 +62,7 @@ export default function OnboardingFlow() {
           <button
             disabled={selected === null}
             onClick={goNext}
-            className="px-10 py-3 border border-blue-400 rounded-xl text-blue-600 font-semibold 
+            className="px-40 py-3 border border-[#1ABCFE] rounded-xl text-[#1ABCFE] text-[1.2rem] font-semibold 
                      disabled:opacity-30 disabled:cursor-not-allowed"
           >
             Next
@@ -117,7 +117,7 @@ function ProfessionScreen({ selected, setSelected }) {
             className={`
               cursor-pointer p-6 rounded-xl shadow-md bg-[#1E3A5F] text-white 
               transition hover:scale-[1.02]
-              ${selected === index ? "ring-4 ring-blue-400" : ""}
+              ${selected === index ? "ring-4 ring-[#1ABCFE]" : ""}
             `}
           >
             <h2 className="text-xl text-center font-semibold mb-2">
@@ -164,7 +164,9 @@ function GoalScreen({ selected, setSelected }) {
               cursor-pointer p-8 bg-white border border-gray-300 
               rounded-xl text-center shadow-sm transition hover:scale-[1.02]
               ${
-                selected === index ? "border-blue-500 ring-2 ring-blue-300" : ""
+                selected === index
+                  ? "border-blue-500 ring-2 ring-[#1ABCFE]"
+                  : ""
               }
             `}
           >
@@ -211,9 +213,9 @@ function ThemeScreen({ selected, setSelected }) {
             key={index}
             onClick={() => setSelected(index)}
             className={`
-              cursor-pointer p-8 rounded-xl bg-[#1E3A5F] text-white shadow-md
+              cursor-pointer p-8 rounded-xl bg-[#1E3A5F] text-white text-center shadow-md
               transition hover:scale-[1.02]
-              ${selected === index ? "ring-4 ring-blue-400" : ""}
+              ${selected === index ? "ring-4 ring-[#1ABCFE]" : ""}
             `}
           >
             <h2 className="text-xl font-semibold mb-3">{item.title}</h2>
@@ -246,7 +248,7 @@ function FinalScreen() {
           className="cursor-pointer p-8 bg-white border border-gray-300 rounded-xl 
                      shadow-sm text-center hover:scale-[1.02] transition"
         >
-          <h2 className="text-xl font-semibold mb-2">
+          <h2 className="text-[2rem]  py-8 font-semibold mb-2 text-[#1C3B5E]">
             Yes, I am starting with a blank Template
           </h2>
         </div>
@@ -256,7 +258,7 @@ function FinalScreen() {
           className="cursor-pointer p-8 bg-white border border-gray-300 rounded-xl 
                      shadow-sm text-center hover:scale-[1.02] transition"
         >
-          <h2 className="text-xl font-semibold mb-2">
+          <h2 className="text-[2rem] py-8 font-semibold mb-2 text-[#1C3B5E]">
             No, I want to upload my CV / portfolio
           </h2>
         </div>
@@ -266,8 +268,8 @@ function FinalScreen() {
       <div className="flex justify-center mt-6">
         <button
           onClick={handleStart}
-          className="px-10 py-3 bg-blue-600 text-white rounded-xl font-semibold 
-                     shadow-md hover:bg-blue-700 transition"
+          className="px-30 py-3 border border-[#1ABCFE]  text-[#1ABCFE] text-[1.5rem] rounded-xl font-semibold 
+                      hover:bg-white transition"
         >
           Start Building
         </button>
