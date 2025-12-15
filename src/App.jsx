@@ -1,11 +1,11 @@
 import { useState } from "react";
 import "./App.css";
-import Lp from "./Lp";
+import OnboardingFlow from "./Onboardingreal.jsx";
 
 function App() {
   return (
     <>
-      <Lp />
+      <OnboardingFlow />
     </>
   );
 }

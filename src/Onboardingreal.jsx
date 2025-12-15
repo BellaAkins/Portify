@@ -1,0 +1,277 @@
+import { useState } from "react";
+
+export default function OnboardingFlow() {
+  const [step, setStep] = useState(1);
+  const [selected, setSelected] = useState(null);
+
+  const goNext = () => {
+    if (step < 4) {
+      setStep(step + 1);
+      setSelected(null);
+    }
+  };
+
+  const skip = () => {
+    setStep(4);
+    setSelected(null);
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-100 px-6 py-10 relative">
+      {/* Skip Button */}
+      <button
+        className="absolute top-16 right-5 text-white bg-[#1ABCFE] font-regular px-3 py-1"
+        onClick={skip}
+      >
+        Skip
+      </button>
+
+      {/* Progress Bar */}
+      <div className="flex justify-center gap-6 mb-10">
+        {[1, 2, 3, 4].map((n) => (
+          <div
+            key={n}
+            onClick={() => {
+              if (n <= step) {
+                setStep(n);
+                setSelected(null);
+              }
+            }}
+            className={`h-2 w-48 rounded-lg cursor-pointer transition
+        ${step === n ? "bg-[#1C3B5E]" : "bg-gray-300 hover:bg-gray-400"}
+      `}
+          />
+        ))}
+      </div>
+
+      {/* STEP SCREENS */}
+      {step === 1 && (
+        <ProfessionScreen selected={selected} setSelected={setSelected} />
+      )}
+      {step === 2 && (
+        <GoalScreen selected={selected} setSelected={setSelected} />
+      )}
+      {step === 3 && (
+        <ThemeScreen selected={selected} setSelected={setSelected} />
+      )}
+      {step === 4 && <FinalScreen />}
+
+      {/* NEXT BUTTON (hidden on last step) */}
+      {step < 4 && (
+        <div className="mt-12 flex justify-center">
+          <button
+            disabled={selected === null}
+            onClick={goNext}
+            className="px-10 py-3 border border-blue-400 rounded-xl text-blue-600 font-semibold 
+                     disabled:opacity-30 disabled:cursor-not-allowed"
+          >
+            Next
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ------------------------------- STEP 1 ------------------------------- */
+
+function ProfessionScreen({ selected, setSelected }) {
+  const professions = [
+    {
+      title: "Creative & Design",
+      desc: "Graphic Designer, Architect, Photographer, Fashion Designer, Art Director",
+    },
+    {
+      title: "Business & Consulting",
+      desc: "Banker, Consultant, Marketing Director, Business Analyst",
+    },
+    {
+      title: "Tech & Developers",
+      desc: "Software Engineer, IT Specialist, Web Developer, Technical Writer",
+    },
+    {
+      title: "Communications & Editorial",
+      desc: "Journalist, Content Strategist, Editor, Blogger, Social Media Manager",
+    },
+    {
+      title: "Education & Service",
+      desc: "Teacher, Event Planner, Personal Trainer, Real Estate Agent, Counselor",
+    },
+    {
+      title: "Scientific & Research",
+      desc: "Microbiologists, Lab Techs, Medical Doctors, Professors, Pharmacists",
+    },
+  ];
+
+  return (
+    <>
+      <h1 className="text-center text-3xl font-semibold mb-12">
+        What profession are you building for?
+      </h1>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {professions.map((item, index) => (
+          <div
+            key={index}
+            onClick={() => setSelected(index)}
+            className={`
+              cursor-pointer p-6 rounded-xl shadow-md bg-[#1E3A5F] text-white 
+              transition hover:scale-[1.02]
+              ${selected === index ? "ring-4 ring-blue-400" : ""}
+            `}
+          >
+            <h2 className="text-xl text-center font-semibold mb-2">
+              {item.title}
+            </h2>
+            <p className="text-sm  text-center opacity-80">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+/* ------------------------------- STEP 2 ------------------------------- */
+
+function GoalScreen({ selected, setSelected }) {
+  const goals = [
+    {
+      title: "Getting hired",
+      desc: "Designed to impress recruiters and hiring managers (ATS system)",
+    },
+    {
+      title: "Attract Clients",
+      desc: "Showcase services, pricing and client testimonials",
+    },
+    {
+      title: "Personal brand",
+      desc: "A flexible site to share thoughts, projects and bio",
+    },
+  ];
+
+  return (
+    <>
+      <h1 className="text-center text-3xl font-semibold mb-8">
+        What is your primary goal for building this portfolio?
+      </h1>
+
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        {goals.map((item, index) => (
+          <div
+            key={index}
+            onClick={() => setSelected(index)}
+            className={`
+              cursor-pointer p-8 bg-white border border-gray-300 
+              rounded-xl text-center shadow-sm transition hover:scale-[1.02]
+              ${
+                selected === index ? "border-blue-500 ring-2 ring-blue-300" : ""
+              }
+            `}
+          >
+            <h2 className="text-xl font-semibold mb-3">{item.title}</h2>
+            <p className="text-sm text-gray-600">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+/* ------------------------------- STEP 3 ------------------------------- */
+
+function ThemeScreen({ selected, setSelected }) {
+  const themes = [
+    {
+      title: "Minimalist",
+      desc: "Clean lines, ample white space, high readability. Best for architects, writers.",
+    },
+    {
+      title: "Bold",
+      desc: "Vibrant colors, strong typography, unique layout Best for creatives, media.",
+    },
+    {
+      title: "Professional",
+      desc: "Structured clear hierarchy, focusing on data and detail. Best for academics, law.",
+    },
+  ];
+
+  return (
+    <>
+      <h1 className="text-center text-3xl font-semibold mb-2">
+        What aesthetic or theme will you be using?
+      </h1>
+      <p className="text-center text-gray-600 mb-10">
+        Pick a theme to define your typography, color palette, and initial
+        design structure.
+      </p>
+
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        {themes.map((item, index) => (
+          <div
+            key={index}
+            onClick={() => setSelected(index)}
+            className={`
+              cursor-pointer p-8 rounded-xl bg-[#1E3A5F] text-white shadow-md
+              transition hover:scale-[1.02]
+              ${selected === index ? "ring-4 ring-blue-400" : ""}
+            `}
+          >
+            <h2 className="text-xl font-semibold mb-3">{item.title}</h2>
+            <p className="text-sm opacity-80">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+/* ------------------------------- STEP 4 (FINAL) ------------------------------- */
+
+function FinalScreen() {
+  const handleStart = () => {
+    // Later replace with navigation:
+    // navigate("/editor") OR router.push("/editor")
+    alert("Redirecting to builder...");
+  };
+
+  return (
+    <>
+      <h1 className="text-center text-3xl font-semibold mb-6">
+        Will you be starting on a blank template?
+      </h1>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto mb-10">
+        <div
+          onClick={() => alert("Start building with blank template")}
+          className="cursor-pointer p-8 bg-white border border-gray-300 rounded-xl 
+                     shadow-sm text-center hover:scale-[1.02] transition"
+        >
+          <h2 className="text-xl font-semibold mb-2">
+            Yes, I am starting with a blank Template
+          </h2>
+        </div>
+
+        <div
+          onClick={() => alert("Upload CV / Portfolio")}
+          className="cursor-pointer p-8 bg-white border border-gray-300 rounded-xl 
+                     shadow-sm text-center hover:scale-[1.02] transition"
+        >
+          <h2 className="text-xl font-semibold mb-2">
+            No, I want to upload my CV / portfolio
+          </h2>
+        </div>
+      </div>
+
+      {/* START BUILDING BUTTON */}
+      <div className="flex justify-center mt-6">
+        <button
+          onClick={handleStart}
+          className="px-10 py-3 bg-blue-600 text-white rounded-xl font-semibold 
+                     shadow-md hover:bg-blue-700 transition"
+        >
+          Start Building
+        </button>
+      </div>
+    </>
+  );
+}
