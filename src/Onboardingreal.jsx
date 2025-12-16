@@ -37,7 +37,7 @@ export default function OnboardingFlow() {
                 setSelected(null);
               }
             }}
-            className={`h-2 w-34 rounded-lg cursor-pointer transition
+            className={`h-2 w-58 rounded-lg cursor-pointer transition
         ${step === n ? "bg-[#1C3B5E]" : "bg-gray-300 hover:bg-gray-400"}
       `}
           />
@@ -105,7 +105,7 @@ function ProfessionScreen({ selected, setSelected }) {
 
   return (
     <>
-      <h1 className="text-center text-[2.5rem] font-semibold mb-12">
+      <h1 className="text-center text-[1.5rem] lg:text-[2.5rem] text-[#000000] font-semibold mb-12">
         What profession are you building for?
       </h1>
 
