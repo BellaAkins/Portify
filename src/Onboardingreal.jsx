@@ -120,10 +120,10 @@ function ProfessionScreen({ selected, setSelected }) {
               ${selected === index ? "ring-4 ring-[#1ABCFE]" : ""}
             `}
           >
-            <h2 className="text-[1.75rem] text-center font-semibold mb-2">
+            <h2 className="text-center font-semibold mb-2 text-[1.25rem] lg:text-[1.75rem]">
               {item.title}
             </h2>
-            <p className="text-[1.25rem]  text-center opacity-80">
+            <p className="text-[1rem] lg:text-[1.25rem]  text-center opacity-80">
               {item.desc}
             </p>
           </div>
