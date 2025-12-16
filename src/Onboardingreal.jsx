@@ -18,14 +18,6 @@ export default function OnboardingFlow() {
 
   return (
     <div className="min-h-screen bg-gray-100 px-16 py-10 relative">
-      {/* Skip Button */}
-      <button
-        className="absolute top-2 right-5 text-white bg-[#1ABCFE] font-regular px-4 py-1"
-        onClick={skip}
-      >
-        Skip
-      </button>
-
       {/* Progress Bar */}
       <div className="flex justify-center gap-6 mb-10">
         {[1, 2, 3, 4].map((n) => (
@@ -43,6 +35,14 @@ export default function OnboardingFlow() {
           />
         ))}
       </div>
+
+      {/* Skip Button */}
+      <button
+        className="sm:absolute sm:top-15 sm:right-5 lg:mt-4 lg:block lg:ml-auto lg:w-fit text-white bg-[#1ABCFE] font-regular px-4 py-1"
+        onClick={skip}
+      >
+        Skip
+      </button>
 
       {/* STEP SCREENS */}
       {step === 1 && (
