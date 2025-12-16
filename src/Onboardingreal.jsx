@@ -17,7 +17,7 @@ export default function OnboardingFlow() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 px-6 py-10 relative">
+    <div className="min-h-screen bg-gray-100 px-16 py-10 relative">
       {/* Skip Button */}
       <button
         className="absolute top-2 right-5 text-white bg-[#1ABCFE] font-regular px-4 py-1"
@@ -105,7 +105,7 @@ function ProfessionScreen({ selected, setSelected }) {
 
   return (
     <>
-      <h1 className="text-center text-3xl font-semibold mb-12">
+      <h1 className="text-center text-[2.5rem] font-semibold mb-12">
         What profession are you building for?
       </h1>
 
@@ -120,10 +120,12 @@ function ProfessionScreen({ selected, setSelected }) {
               ${selected === index ? "ring-4 ring-[#1ABCFE]" : ""}
             `}
           >
-            <h2 className="text-xl text-center font-semibold mb-2">
+            <h2 className="text-[1.75rem] text-center font-semibold mb-2">
               {item.title}
             </h2>
-            <p className="text-sm  text-center opacity-80">{item.desc}</p>
+            <p className="text-[1.25rem]  text-center opacity-80">
+              {item.desc}
+            </p>
           </div>
         ))}
       </div>
@@ -170,8 +172,10 @@ function GoalScreen({ selected, setSelected }) {
               }
             `}
           >
-            <h2 className="text-xl font-semibold mb-3">{item.title}</h2>
-            <p className="text-sm text-gray-600">{item.desc}</p>
+            <h2 className="text-[#1C3B5E] text-[1.75rem] font-semibold mb-3">
+              {item.title}
+            </h2>
+            <p className="text- text-[#1C3B5E]">{item.desc}</p>
           </div>
         ))}
       </div>
