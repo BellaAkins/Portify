@@ -38,7 +38,7 @@ export default function OnboardingFlow() {
 
       {/* Skip Button */}
       <button
-        className="sm:absolute sm:top-15 sm:right-5 lg:mt-4 lg:block lg:ml-auto lg:w-fit text-white bg-[#1ABCFE] font-regular px-4 py-1"
+        className="mt-4 block ml-auto w-fit text-white bg-[#1ABCFE] font-regular px-4 py-1 rounded-md"
         onClick={skip}
       >
         Skip
