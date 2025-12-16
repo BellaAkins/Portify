@@ -38,7 +38,7 @@ export default function OnboardingFlow() {
 
       {/* Skip Button */}
       <button
-        className="mt-4 block ml-auto w-fit text-white bg-[#1ABCFE] font-regular px-4 py-1 rounded-md"
+        className="mt-4 block ml-auto w-fit text-white bg-[#1ABCFE] border-radius-[6px] rounded-md font-regular px-4 py-1"
         onClick={skip}
       >
         Skip
@@ -120,12 +120,10 @@ function ProfessionScreen({ selected, setSelected }) {
               ${selected === index ? "ring-4 ring-[#1ABCFE]" : ""}
             `}
           >
-            <h2 className="text-center font-semibold mb-2 text-[1.25rem] lg:text-[1.75rem]">
+            <h2 className="text-center font-semibold mb-2 text-[1.25rem] ">
               {item.title}
             </h2>
-            <p className="text-[1rem] lg:text-[1.25rem]  text-center opacity-80">
-              {item.desc}
-            </p>
+            <p className="text-[1rem]   text-center opacity-80">{item.desc}</p>
           </div>
         ))}
       </div>
@@ -153,18 +151,18 @@ function GoalScreen({ selected, setSelected }) {
 
   return (
     <>
-      <h1 className="text-center text-3xl font-semibold mb-8">
+      <h1 className="text-center text-[1.5rem] lg:text-[2.5rem] text-[#000000] font-semibold mb-12">
         What is your primary goal for building this portfolio?
       </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto mt-20 ">
         {goals.map((item, index) => (
           <div
             key={index}
             onClick={() => setSelected(index)}
             className={`
-              cursor-pointer p-8 bg-white border border-gray-300 
-              rounded-xl text-center shadow-sm transition hover:scale-[1.02]
+              cursor-pointer p-8 bg-white border border-[#1C3B5E]
+              rounded-xl text-center shadow-sm transition hover:scale-[1.02] 
               ${
                 selected === index
                   ? "border-blue-500 ring-2 ring-[#1ABCFE]"
@@ -172,10 +170,12 @@ function GoalScreen({ selected, setSelected }) {
               }
             `}
           >
-            <h2 className="text-[#1C3B5E] text-[1.75rem] font-semibold mb-3">
+            <h2 className="text-[#1C3B5E]text-center text-[1.5rem]  text-[#000000] font-semibold mb-12font-semibold mb-3 ">
               {item.title}
             </h2>
-            <p className="text- text-[#1C3B5E]">{item.desc}</p>
+            <p className="text-[1rem] lg:text-[1.25rem]  text-center text-[#1C3B5E]">
+              {item.desc}
+            </p>
           </div>
         ))}
       </div>
@@ -203,7 +203,7 @@ function ThemeScreen({ selected, setSelected }) {
 
   return (
     <>
-      <h1 className="text-center text-3xl font-semibold mb-2">
+      <h1 className="text-center text-[1.5rem] lg:text-[2.5rem] text-[#000000] font-semibold mb-12">
         What aesthetic or theme will you be using?
       </h1>
       <p className="text-center text-gray-600 mb-10">
@@ -222,8 +222,12 @@ function ThemeScreen({ selected, setSelected }) {
               ${selected === index ? "ring-4 ring-[#1ABCFE]" : ""}
             `}
           >
-            <h2 className="text-xl font-semibold mb-3">{item.title}</h2>
-            <p className="text-sm opacity-80">{item.desc}</p>
+            <h2 className="text-[#1C3B5E]text-center text-[1.5rem] font-semibold mb-12font-semibold mb-3">
+              {item.title}
+            </h2>
+            <p className="text-[1rem] lg:text-[1.25rem]  text-center opacity-80">
+              {item.desc}
+            </p>
           </div>
         ))}
       </div>
