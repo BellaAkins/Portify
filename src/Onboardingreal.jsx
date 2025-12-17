@@ -62,7 +62,7 @@ export default function OnboardingFlow() {
           <button
             disabled={selected === null}
             onClick={goNext}
-            className="px-25 py-3 border border-[#1ABCFE] rounded-xl text-[#1ABCFE] text-[1.2rem] font-semibold 
+            className="px-25 py-3 border border-[#1ABCFE] rounded-xl text-[#1ABCFE] text-[1.2rem] font-semibold hover:bg-[#1ABCFE] hover:text-white transition
                      disabled:opacity-30 disabled:cursor-not-allowed"
           >
             Next
@@ -276,7 +276,7 @@ function FinalScreen() {
       <div className="flex justify-center mt-6">
         <button
           onClick={handleStart}
-          className="px-13 py-3 border border-[#1ABCFE]  text-[#1ABCFE] text-[1rem] rounded-xl font-semibold 
+          className="px-15 py-3 border border-[#1ABCFE]  text-[#1ABCFE] text-[1rem] rounded-xl font-semibold 
                       hover:bg-white transition"
         >
           Start Building
