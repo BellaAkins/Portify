@@ -62,7 +62,7 @@ export default function OnboardingFlow() {
           <button
             disabled={selected === null}
             onClick={goNext}
-            className="px-25 py-3 border border-[#1ABCFE] rounded-xl text-[#1ABCFE] text-[1.2rem] font-semibold hover:bg-[#1ABCFE] hover:text-white transition
+            className="px-25 py-3 border border-[#1ABCFE] rounded-xl text-[#1ABCFE] text-[1.2rem] font-semibold hover:bg-[#1ABCFE]
                      disabled:opacity-30 disabled:cursor-not-allowed"
           >
             Next
@@ -256,7 +256,7 @@ function FinalScreen() {
           className="cursor-pointer p-8 bg-white border border-gray-300 rounded-xl 
                      shadow-sm text-center hover:scale-[1.02] transition"
         >
-          <h2 className="text-[2rem]  py-8 font-semibold mb-2 text-[#1C3B5E]">
+          <h2 className="text-[1.5rem] lg:text-[2.5rem]  py-8 font-semibold mb-2 text-[#1C3B5E]">
             Yes, I am starting with a blank Template
           </h2>
         </div>
@@ -266,7 +266,7 @@ function FinalScreen() {
           className="cursor-pointer p-8 bg-white border border-gray-300 rounded-xl 
                      shadow-sm text-center hover:scale-[1.02] transition"
         >
-          <h2 className="text-[2rem] py-8 font-semibold mb-2 text-[#1C3B5E]">
+          <h2 className="text-[1.5rem] lg:text-[2.5rem] py-8 font-semibold mb-2 text-[#1C3B5E]">
             No, I want to upload my CV / portfolio
           </h2>
         </div>
@@ -276,8 +276,7 @@ function FinalScreen() {
       <div className="flex justify-center mt-6">
         <button
           onClick={handleStart}
-          className="px-15 py-3 border border-[#1ABCFE]  text-[#1ABCFE] text-[1rem] rounded-xl font-semibold 
-                      hover:bg-white transition"
+          className="px-15 py-3 border border-[#1ABCFE]  text-[#1ABCFE] text-[1rem] rounded-xl font-semibold hover:bg-[#1ABCFE] hover:text-white transition"
         >
           Start Building
         </button>
