@@ -276,7 +276,7 @@ function FinalScreen() {
       <div className="flex justify-center mt-6">
         <button
           onClick={handleStart}
-          className="px-15 py-3 border border-[#1ABCFE]  text-[#1ABCFE] text-[1rem] rounded-xl font-semibold hover:bg-[#1ABCFE] hover:text-white transition"
+          className="px-15 py-3 border border-[#1ABCFE]  text-[#1ABCFE] text-[1rem] rounded-xl font-semibold hover:bg-[#1ABCFE] hover:text-white transition active:bg-[#1ABCFE] active:text-white active:scale-95"
         >
           Start Building
         </button>
