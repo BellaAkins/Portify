@@ -62,7 +62,7 @@ export default function OnboardingFlow() {
           <button
             disabled={selected === null}
             onClick={goNext}
-            className="px-25 py-3 border border-[#1ABCFE] rounded-xl text-[#1ABCFE] text-[1.2rem] font-semibold hover:bg-[#1ABCFE] hover:text-white transition
+            className="px-25 py-3 border border-[#1ABCFE] rounded-xl text-[#1ABCFE] text-[1.2rem] font-semibold hover:bg-[#1ABCFE] hover:text-white transition  active:bg-[#1ABCFE] active:text-white
                      disabled:opacity-30 disabled:cursor-not-allowed"
           >
             Next
