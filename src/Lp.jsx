@@ -20,11 +20,9 @@ export default function LandingPage() {
 
   return (
     <div className="font-sans bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors">
-
       {/* ================= NAVBAR ================= */}
       <nav className="fixed top-0 left-0 w-full z-30 bg-white dark:bg-gray-800 shadow-sm transition-colors">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-
           {/* Logo */}
           <div className="flex items-center gap-2 text-xl font-semibold">
             <div className="w-5 h-5 bg-gray-300 dark:bg-gray-600" />
@@ -121,12 +119,8 @@ export default function LandingPage() {
             The Digital Edge Your Career Needs.
           </h1>
           <div className="flex gap-4">
-            <button className="bg-blue-600 px-4 py-2 rounded-md">
-              Login
-            </button>
-            <button className="border px-4 py-2 rounded-md">
-              Signup
-            </button>
+            <button className="bg-blue-600 px-4 py-2 rounded-md">Login</button>
+            <button className="border px-4 py-2 rounded-md">Signup</button>
           </div>
         </div>
       </section>

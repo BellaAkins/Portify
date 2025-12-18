@@ -1,11 +1,11 @@
 import { useState } from "react";
 import "./App.css";
-import OnboardingFlow from "./Onboardingreal.jsx";
+import Signup from "./Signup.jsx";
 
 function App() {
   return (
     <>
-      <OnboardingFlow />
+      <Signup />
     </>
   );
 }
