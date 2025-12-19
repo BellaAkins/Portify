@@ -20,14 +20,18 @@ export default function LoginPage() {
           <h2 className="text-xl text-[#11B0F5] mb-10">Portify</h2>
 
           {/* Email */}
-          <label className="w-full max-w-md text-[#11B0F5] text-sm mb-1">Email</label>
+          <label className="w-full max-w-md text-[#11B0F5] text-sm mb-1">
+            Email
+          </label>
           <input
             type="email"
             className="w-full max-w-md bg-[#1F2933] border border-[#11B0F5] p-3 rounded-md outline-none mb-6"
           />
 
           {/* Password */}
-          <label className="w-full max-w-md text-[#11B0F5] text-sm mb-1">Password</label>
+          <label className="w-full max-w-md text-[#11B0F5] text-sm mb-1">
+            Password
+          </label>
           <div className="relative w-full max-w-md">
             <input
               type={showPassword ? "text" : "password"}
@@ -51,7 +55,8 @@ export default function LoginPage() {
           </button>
 
           <p className="mt-4 text-sm">
-            New user? <span className="text-[#11B0F5] cursor-pointer">Sign Up</span>
+            New user?{" "}
+            <span className="text-[#11B0F5] cursor-pointer">Sign Up</span>
           </p>
 
           {/* Social Login */}
