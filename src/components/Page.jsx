@@ -44,8 +44,7 @@ export default function Page() {
 
 /* ================= NAV ================= */
 function Nav({ menuOpen, setMenuOpen, dark, setDark }) {
-  const [productsOpen, setProductsOpen] = useState(false);
-  const [templatesOpen, setTemplatesOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white dark:bg-gray-800 shadow">
@@ -56,22 +55,28 @@ function Nav({ menuOpen, setMenuOpen, dark, setDark }) {
         <div className="hidden md:flex items-center gap-6">
           <Dropdown
             label="Products"
-            open={productsOpen}
-            setOpen={setProductsOpen}
+            isOpen={openDropdown === "products"}
+            onToggle={() =>
+              setOpenDropdown(openDropdown === "products" ? null : "products")
+            }
+            onClose={() => setOpenDropdown(null)}
           >
-            <a>Resume Builder</a>
-            <a>Portfolio Builder</a>
-            <a>Cover Letters</a>
+            <Link to="/resume">Resume Builder</Link>
+            <Link to="/portfolio">Portfolio Builder</Link>
+            <Link to="/cover-letters">Cover Letters</Link>
           </Dropdown>
 
           <Dropdown
             label="Templates"
-            open={templatesOpen}
-            setOpen={setTemplatesOpen}
+            isOpen={openDropdown === "templates"}
+            onToggle={() =>
+              setOpenDropdown(openDropdown === "templates" ? null : "templates")
+            }
+            onClose={() => setOpenDropdown(null)}
           >
-            <a>Resume Templates</a>
-            <a>CV Templates</a>
-            <a>Portfolio Templates</a>
+            <Link to="/resume-templates">Resume Templates</Link>
+            <Link to="/cv-templates">CV Templates</Link>
+            <Link to="/portfolio-templates">Portfolio Templates</Link>
           </Dropdown>
 
           <a className="hover:text-blue-600 cursor-pointer">About</a>
@@ -105,67 +110,21 @@ function Nav({ menuOpen, setMenuOpen, dark, setDark }) {
         }`}
       >
         <div className="p-6 flex flex-col gap-5 text-gray-800 dark:text-gray-100">
-          {/* Close button */}
           <button onClick={() => setMenuOpen(false)} className="self-end p-2">
             <X size={35} className="text-[#1ABCFE]" />
           </button>
 
-          {/* Menu */}
-          <MobileDropdown
-            label="Products"
-            open={productsOpen}
-            setOpen={setProductsOpen}
-          >
-            <a className="cursor-pointer">Resume Builder</a>
-            <a className="cursor-pointer">Portfolio Builder</a>
-            <a className="cursor-pointer">Cover Letters</a>
+          <MobileDropdown label="Products">
+            <Link to="/resume">Resume Builder</Link>
+            <Link to="/portfolio">Portfolio Builder</Link>
+            <Link to="/cover-letters">Cover Letters</Link>
           </MobileDropdown>
 
-          <MobileDropdown
-            label="Templates"
-            open={templatesOpen}
-            setOpen={setTemplatesOpen}
-          >
-            <a className="cursor-pointer">Resume Templates</a>
-            <a className="cursor-pointer">CV Templates</a>
-            <a className="cursor-pointer">Portfolio Templates</a>
+          <MobileDropdown label="Templates">
+            <Link to="/resume-templates">Resume Templates</Link>
+            <Link to="/cv-templates">CV Templates</Link>
+            <Link to="/portfolio-templates">Portfolio Templates</Link>
           </MobileDropdown>
-
-          <a className="cursor-pointer">About Us</a>
-
-          {/* Divider */}
-          <div className="border-t border-gray-300 dark:border-gray-600 my-2" />
-
-          {/* Contact */}
-          <a className="flex items-center gap-3 cursor-pointer">
-            <Phone size={18} />
-            <span>Contact Us</span>
-          </a>
-
-          <div className="flex gap-4 mt-2">
-            <button className="p-2 bg-blue-600 text-white rounded-full">
-              <Phone size={16} />
-            </button>
-            <button className="p-2 bg-green-500 text-white rounded-full">
-              <FaWhatsapp size={16} />
-            </button>
-            <button className="p-2 bg-gray-700 text-white rounded-full">
-              <Mail size={16} />
-            </button>
-          </div>
-
-          {/* CTA */}
-          <button className="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg">
-            Start Building
-          </button>
-
-          {/* Dark mode toggle */}
-          <button
-            onClick={() => setDark(!dark)}
-            className="mt-4 p-2 rounded-lg bg-gray-100 dark:bg-gray-700 flex justify-center"
-          >
-            {dark ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
         </div>
       </div>
     </nav>
@@ -173,19 +132,27 @@ function Nav({ menuOpen, setMenuOpen, dark, setDark }) {
 }
 
 /* ================= DROPDOWNS ================= */
-function Dropdown({ label, open, setOpen, children }) {
+
+function Dropdown({ label, isOpen, onToggle, onClose, children }) {
   return (
-    <div
-      className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-    >
-      <button className="flex items-center gap-1 hover:text-blue-600">
+    <div className="relative">
+      <button
+        type="button"
+        onClick={onToggle}
+        className="flex items-center gap-1 hover:text-blue-600"
+      >
         {label} <ChevronDown size={16} />
       </button>
 
-      {open && (
-        <div className="absolute top-full mt-2 w-48 bg-white dark:bg-gray-700 rounded-lg shadow-lg p-4 flex flex-col gap-2">
+      {isOpen && (
+        <div
+          className="absolute left-0 top-full mt-2 w-48
+                     bg-white dark:bg-gray-700
+                     rounded-lg shadow-lg p-4
+                     flex flex-col gap-2
+                     z-50"
+          onClick={onClose}
+        >
           {children}
         </div>
       )}
@@ -193,7 +160,9 @@ function Dropdown({ label, open, setOpen, children }) {
   );
 }
 
-function MobileDropdown({ label, open, setOpen, children }) {
+function MobileDropdown({ label, children }) {
+  const [open, setOpen] = useState(false);
+
   return (
     <div>
       <button
