@@ -1,5 +1,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, Sun, Moon } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import HeroImage from "../assets/hero.jpg";
+import Keyboard from "../assets/keyboard.jpg";
+import Pick from "../assets/finger.jpg";
+import Create from "../assets/create.jpg";
+import Gethired from "../assets/gethired.jpg";
 
 /* ================= ROOT ================= */
 export default function LandingPage() {
@@ -93,19 +101,21 @@ function Nav({ menuOpen, setMenuOpen, dark, setDark }) {
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="p-6 flex flex-col gap-4">
+        <div className="p-6 flex flex-col gap-5 text-gray-800 dark:text-gray-100">
+          {/* Close button */}
           <button onClick={() => setMenuOpen(false)} className="self-end p-2">
-            <X size={28} />
+            <X size={35} className="text-[#1ABCFE]" />
           </button>
 
+          {/* Menu */}
           <MobileDropdown
             label="Products"
             open={productsOpen}
             setOpen={setProductsOpen}
           >
-            <a>Resume Builder</a>
-            <a>Portfolio Builder</a>
-            <a>Cover Letters</a>
+            <a className="cursor-pointer">Resume Builder</a>
+            <a className="cursor-pointer">Portfolio Builder</a>
+            <a className="cursor-pointer">Cover Letters</a>
           </MobileDropdown>
 
           <MobileDropdown
@@ -113,21 +123,43 @@ function Nav({ menuOpen, setMenuOpen, dark, setDark }) {
             open={templatesOpen}
             setOpen={setTemplatesOpen}
           >
-            <a>Resume Templates</a>
-            <a>CV Templates</a>
-            <a>Portfolio Templates</a>
+            <a className="cursor-pointer">Resume Templates</a>
+            <a className="cursor-pointer">CV Templates</a>
+            <a className="cursor-pointer">Portfolio Templates</a>
           </MobileDropdown>
 
-          <a>About</a>
-          <a>Contact</a>
+          <a className="cursor-pointer">About Us</a>
 
-          <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg">
+          {/* Divider */}
+          <div className="border-t border-gray-300 dark:border-gray-600 my-2" />
+
+          {/* Contact */}
+          <a className="flex items-center gap-3 cursor-pointer">
+            <Phone size={18} />
+            <span>Contact Us</span>
+          </a>
+
+          <div className="flex gap-4 mt-2">
+            <button className="p-2 bg-blue-600 text-white rounded-full">
+              <Phone size={16} />
+            </button>
+            <button className="p-2 bg-green-500 text-white rounded-full">
+              <FaWhatsapp size={16} />
+            </button>
+            <button className="p-2 bg-gray-700 text-white rounded-full">
+              <Mail size={16} />
+            </button>
+          </div>
+
+          {/* CTA */}
+          <button className="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg">
             Start Building
           </button>
 
+          {/* Dark mode toggle */}
           <button
             onClick={() => setDark(!dark)}
-            className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 flex justify-center"
+            className="mt-4 p-2 rounded-lg bg-gray-100 dark:bg-gray-700 flex justify-center"
           >
             {dark ? <Sun size={18} /> : <Moon size={18} />}
           </button>
@@ -175,7 +207,7 @@ function MobileDropdown({ label, open, setOpen, children }) {
   );
 }
 
-/* ================= HERO ================= */
+/* ================= HERO ================= 
 function Hero() {
   return (
     <section className="pt-28 pb-20 px-6 text-center max-w-4xl mx-auto">
@@ -198,8 +230,49 @@ function Hero() {
     </section>
   );
 }
+  */
 
-/* ================= STEPS ================= */
+function Hero() {
+  return (
+    <section className="relative h-[90vh] w-full">
+      {/* Background Image */}
+      <img
+        src={HeroImage}
+        alt="Hero"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+
+      {/* Dark overlay 
+      <div className="absolute inset-0 bg-black/50" />
+      */}
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto h-full flex items-center px-6">
+        <div className="max-w-xl text-left text-white">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            The Digital Edge <br /> Your Career Needs.
+          </h1>
+
+          <div className="flex gap-4">
+            <Link to="/login">
+              <button className="px-8 py-3 bg-[#1ABCFE] hover:bg-white hover:text-[#1ABCFE] transition rounded-lg font-medium">
+                Login
+              </button>
+            </Link>
+
+            <Link to="/signup">
+              <button className="px-8 py-3 border border-[#1ABCFE] text-[#1ABCFE] bg-white hover:bg-[#1ABCFE] hover:text-white transition rounded-lg font-medium">
+                Signup
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ================= STEPS ================= 
 function Steps() {
   const steps = [
     ["Tell Us About You", "Upload your details"],
@@ -220,6 +293,75 @@ function Steps() {
           >
             <h3 className="font-semibold text-xl mb-2">{title}</h3>
             <p className="text-gray-600 dark:text-gray-300">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+*/
+/*STEPS*/
+function Steps() {
+  const steps = [
+    {
+      title: "Step 1. Tell Us About You",
+      desc: "Upload or enter your experience, skills, and education.",
+      img: Keyboard,
+    },
+    {
+      title: "Step 2. Pick Your Design",
+      desc: "Choose from clean, professional résumé, CV, and cover-letter templates.",
+      img: Pick,
+    },
+    {
+      title: "Step 3. Customize Your Design",
+      desc: "Refine your work instantly using the visual editor to switch templates and adjust colors and fine-tune your layout in real-time",
+      img: Create,
+    },
+    {
+      title: "Step 4. Download & Share",
+      desc: "Publish your portfolio to a custom URL and share it instantly. Every portfolio is fully ATS optimized automatically",
+      img: Gethired,
+    },
+  ];
+
+  return (
+    <section className="py-24 px-6 bg-gray-50 dark:bg-gray-800 font-pd">
+      <h2 className="text-3xl font-bold font-pd text-center mb-20">
+        Designed for Modern Creative
+      </h2>
+
+      <div className="max-w-6xl mx-auto space-y-24">
+        {steps.map((step, i) => (
+          <div
+            key={i}
+            className={`grid md:grid-cols-2 gap-12 items-center ${
+              i % 2 !== 0 ? "md:flex-row-reverse" : ""
+            }`}
+          >
+            {/* Text */}
+            <div className={`${i % 2 !== 0 ? "md:order-2" : ""}`}>
+              {/*<p className="text-sm font-semibold text-blue-600 mb-2">
+                Step {i + 1}
+              </p> */}
+              <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300 max-w-md">
+                {step.desc}
+              </p>
+            </div>
+
+            {/* Image */}
+            <div
+              className={`${
+                i % 2 !== 0 ? "md:order-1" : ""
+              } rounded-xl overflow-hidden shadow-lg`}
+            >
+              <img
+                src={step.img}
+                alt={step.title}
+                className="w-full h-72 object-cover"
+              />
+            </div>
           </div>
         ))}
       </div>
