@@ -8,6 +8,9 @@ import Keyboard from "../assets/keyboard.jpg";
 import Pick from "../assets/finger.jpg";
 import Create from "../assets/create.jpg";
 import Gethired from "../assets/gethired.jpg";
+import Avatarrita from "../assets/avatarrita.jpg";
+import Avatarsusan from "../assets/avatarsusan.jpg";
+import Avatarjamal from "../assets/avatarjamal.jpg";
 
 /* ================= ROOT ================= */
 export default function LandingPage() {
@@ -261,7 +264,7 @@ function Hero() {
             </Link>
 
             <Link to="/signup">
-              <button className="px-8 py-3 border border-[#1ABCFE] text-[#1ABCFE] bg-white hover:bg-[#1ABCFE] hover:text-white transition rounded-lg font-medium">
+              <button className="px-8 py-3 border border-[#1ABCFE] text-[#1ABCFE] bg-white hover:bg-[] hover:text-[#1ABCFE] transition rounded-lg font-medium">
                 Signup
               </button>
             </Link>
@@ -410,7 +413,7 @@ function FeaturedTemplates() {
   );
 }
 
-/* ================= TESTIMONIALS ================= */
+/* ================= TESTIMONIALS ================= 
 function Testimonials() {
   return (
     <section className="py-20 px-6 text-center">
@@ -424,6 +427,56 @@ function Testimonials() {
           >
             “Portify helped me stand out instantly.”
             <div className="mt-4 font-semibold">– {name}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}*/
+
+function Testimonials() {
+  const testimonials = [
+    {
+      name: "Rita",
+      text: "This tool helped me create a professional résumé in under 10 minutes — and I landed interviews immediately",
+      avatar: Avatarrita,
+    },
+    {
+      name: "Susan",
+      text: "Thanks to Portify, I finally have a portfolio I’m proud to share with recruiters.",
+      avatar: Avatarsusan,
+    },
+    {
+      name: "Jamal",
+      text: "I’ve tried many résumé builders, but this is the first one that actually made the process simple",
+      avatar: Avatarjamal,
+    },
+  ];
+
+  return (
+    <section className="py-20 px-6 text-center">
+      <h2 className="text-3xl font-bold mb-10">What People Say</h2>
+
+      <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {testimonials.map((testimonial, i) => (
+          <div
+            key={i}
+            className="p-6 bg-[#1C3B5E] dark:bg-gray-800 text-white rounded-xl shadow flex flex-col items-center"
+          >
+            {/* Avatar */}
+            <img
+              src={testimonial.avatar}
+              alt={testimonial.name}
+              className="w-16 h-16 rounded-full mb-4 object-cover"
+            />
+
+            {/* Testimonial text */}
+            <p className=" dark:text-gray-200">“{testimonial.text}”</p>
+
+            {/* Name */}
+            <div className="mt-4 font-semibold dark:text-gray-100">
+              – {testimonial.name}
+            </div>
           </div>
         ))}
       </div>
