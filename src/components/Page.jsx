@@ -34,7 +34,6 @@ export default function Page() {
 
       <Hero />
       <Steps />
-      <Features />
       <FeaturedTemplates />
       <Testimonials />
       <Footer />
@@ -82,9 +81,9 @@ function Nav({ menuOpen, setMenuOpen, dark, setDark }) {
           <a className="hover:text-blue-600 cursor-pointer">About</a>
           <a className="hover:text-blue-600 cursor-pointer">Contact</a>
 
-          <button className="px-4 py-2 bg-blue-600 text-white rounded-lg">
+          {/* <button className="px-4 py-2 bg-blue-600 text-white rounded-lg">
             Start Building
-          </button>
+          </button> */}
 
           <button
             onClick={() => setDark(!dark)}
@@ -110,6 +109,7 @@ function Nav({ menuOpen, setMenuOpen, dark, setDark }) {
         }`}
       >
         <div className="p-6 flex flex-col gap-5 text-gray-800 dark:text-gray-100">
+          {/*X button*/}
           <button onClick={() => setMenuOpen(false)} className="self-end p-2">
             <X size={35} className="text-[#1ABCFE]" />
           </button>
@@ -125,6 +125,39 @@ function Nav({ menuOpen, setMenuOpen, dark, setDark }) {
             <Link to="/cv-templates">CV Templates</Link>
             <Link to="/portfolio-templates">Portfolio Templates</Link>
           </MobileDropdown>
+
+          <a className="cursor-pointer">About Us</a>
+
+          {/* Divider */}
+          <div className="border-t border-gray-300 dark:border-gray-600 my-2" />
+
+          {/* Contact */}
+          <a className="flex items-center gap-3 cursor-pointer">
+            <Phone size={18} />
+            <span>Contact Us</span>
+          </a>
+
+          <div className="flex gap-4 mt-2">
+            <button className="p-2 bg-blue-600 text-white rounded-full">
+              <Phone size={16} />
+            </button>
+            <button className="p-2 bg-green-500 text-white rounded-full">
+              <FaWhatsapp size={16} />
+            </button>
+            <button className="p-2 bg-gray-700 text-white rounded-full">
+              <Mail size={16} />
+            </button>
+          </div>
+
+          {/* CTA */}
+
+          {/* Dark mode toggle */}
+          <button
+            onClick={() => setDark(!dark)}
+            className="mt-4 p-2 rounded-lg bg-gray-100 dark:bg-gray-700 flex justify-center"
+          >
+            {dark ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
         </div>
       </div>
     </nav>
@@ -342,27 +375,6 @@ function Steps() {
 }
 
 /* ================= FEATURES ================= */
-function Features() {
-  return (
-    <section className="py-20 px-6">
-      <h2 className="text-3xl font-bold text-center mb-12">
-        Why Choose Portify?
-      </h2>
-
-      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto text-center">
-        <div className="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl">
-          Fast & Easy Setup
-        </div>
-        <div className="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl">
-          Professional Templates
-        </div>
-        <div className="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl">
-          Recruiter-Ready Designs
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ================= TEMPLATES ================= */
 function FeaturedTemplates() {
