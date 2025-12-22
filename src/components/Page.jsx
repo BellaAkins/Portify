@@ -8,9 +8,9 @@ import Keyboard from "../assets/keyboard.jpg";
 import Pick from "../assets/finger.jpg";
 import Create from "../assets/create.jpg";
 import Gethired from "../assets/gethired.jpg";
-import Avatarrita from "../assets/avatarrita.jpg";
-import Avatarsusan from "../assets/avatarsusan.jpg";
-import Avatarjamal from "../assets/avatarjamal.jpg";
+import AvatarRita from "../assets/avatar-rita.jpg";
+import Avatarsusan from "../assets/avatar-susan.jpg";
+import Avatarjamal from "../assets/avatar-jamal.jpg";
 
 /* ================= ROOT ================= */
 export default function Page() {
@@ -439,7 +439,7 @@ function Testimonials() {
     {
       name: "Rita",
       text: "This tool helped me create a professional résumé in under 10 minutes — and I landed interviews immediately",
-      avatar: Avatarrita,
+      avatar: AvatarRita,
     },
     {
       name: "Susan",
