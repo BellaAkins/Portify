@@ -13,7 +13,7 @@ import Avatarsusan from "../assets/avatarsusan.jpg";
 import Avatarjamal from "../assets/avatarjamal.jpg";
 
 /* ================= ROOT ================= */
-export default function LandingPage() {
+export default function Page() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dark, setDark] = useState(false);
 
