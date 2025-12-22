@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Moon, Sun, Eye, EyeOff } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function SignUpPage() {
   const [dark, setDark] = useState(false);

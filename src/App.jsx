@@ -1,38 +1,14 @@
-import { useState } from "react";
-import "./App.css";
-import Login from "./components/Login";
-import Signup from "./Signup";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "../src/components/Login";
+import Signup from "../src/components/Signup";
 
-function App() {
+export default function App() {
   return (
-    <>
-      <Login />
-      <Signup />
-    </>
-  );
-}
-
-export default App;
-
-{
-  /*
-  import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LandingPage from "./LandingPage";
-import Signup from "./Signup";
-
-function App() {
-  return (
-    <BrowserRouter>
+    <Router>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
-}
-
-export default App;
-
-  
-  */
 }

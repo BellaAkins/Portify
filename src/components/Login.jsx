@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Moon, Sun, Eye, EyeOff } from "lucide-react";
 import { FaFacebookF, FaApple } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
 
 export default function SignUpPage() {
   const [dark, setDark] = useState(false);
@@ -112,7 +113,12 @@ export default function SignUpPage() {
         </form>
         <p className="mt-8 text-sm text-[#1C3B5E] dark:text-[#FFFFFF]">
           New user?{" "}
-          <span className="text-[#11B0F5] cursor-pointer">Sign Up</span>
+          <Link
+            to="/signup"
+            className="text-[#11B0F5] cursor-pointer hover:underline"
+          >
+            Sign Up
+          </Link>
         </p>
 
         {/* Social Login */}
