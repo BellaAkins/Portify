@@ -8,9 +8,9 @@ import Keyboard from "../assets/keyboard.jpg";
 import Pick from "../assets/finger.jpg";
 import Create from "../assets/create.jpg";
 import Gethired from "../assets/gethired.jpg";
-//import AvatarRita from "../assets/avatar-rita.jpg";
-//import Avatarsusan from "../assets/avatar-susan.jpg";
-//import Avatarjamal from "../assets/avatar-jamal.jpg";
+import AvatarRita from "../assets/avatar-rita.jpg";
+import Avatarsusan from "../assets/avatar-susan.jpg";
+import Avatarjamal from "../assets/avatar-jamal.jpg";
 
 /* ================= ROOT ================= */
 export default function Page() {
@@ -434,7 +434,7 @@ function Testimonials() {
   );
 }*/
 
-/*function Testimonials() {
+function Testimonials() {
   const testimonials = [
     {
       name: "Rita",
@@ -463,17 +463,17 @@ function Testimonials() {
             key={i}
             className="p-6 bg-[#1C3B5E] dark:bg-gray-800 text-white rounded-xl shadow flex flex-col items-center"
           >
-            {/* Avatar 
+            {/* Avatar */}
             <img
               src={testimonial.avatar}
               alt={testimonial.name}
               className="w-16 h-16 rounded-full mb-4 object-cover"
             />
 
-            {/* Testimonial text 
+            {/* Testimonial text */}
             <p className=" dark:text-gray-200">“{testimonial.text}”</p>
 
-            {/* Name *
+            {/* Name */}
             <div className="mt-4 font-semibold dark:text-gray-100">
               – {testimonial.name}
             </div>
@@ -482,7 +482,7 @@ function Testimonials() {
       </div>
     </section>
   );
-} */
+}
 
 /* ================= FOOTER ================= */
 function Footer() {
