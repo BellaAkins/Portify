@@ -487,9 +487,43 @@ function Testimonials() {
 /* ================= FOOTER ================= */
 function Footer() {
   return (
-    <footer className="py-10 px-6 bg-gray-900 text-gray-300 text-center">
-      <div className="font-bold text-xl mb-4">Portify</div>
-      <p className="text-sm">© 2025 Portify. All rights reserved.</p>
+    <footer className="bg-[#0f2f4f] text-white">
+      {/* Top section */}
+      <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
+        {/* Logo */}
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 bg-white rounded-sm" />
+          <span className="text-xl font-semibold">Portify</span>
+        </div>
+
+        {/* Links */}
+        <nav className="flex flex-wrap gap-6 text-sm text-gray-300">
+          <a href="#" className="hover:text-white transition">
+            Home
+          </a>
+          <a href="#" className="hover:text-white transition">
+            Products
+          </a>
+          <a href="#" className="hover:text-white transition">
+            Templates
+          </a>
+          <a href="#" className="hover:text-white transition">
+            About Us
+          </a>
+          <a href="#" className="hover:text-white transition">
+            Contact Us
+          </a>
+        </nav>
+      </div>
+
+      {/* Bottom section */}
+      <div className="border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-4 text-center text-xs text-gray-400">
+          <span>Terms of Services</span>
+          <span className="mx-2">|</span>
+          <span>Privacy Policy</span>
+        </div>
+      </div>
     </footer>
   );
 }
