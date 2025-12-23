@@ -117,7 +117,9 @@ function Nav({ menuOpen, setMenuOpen, dark, setDark }) {
             <Link to="/portfolio-templates">Portfolio Templates</Link>
           </MobileDropdown>
 
-          <a className="cursor-pointer">About Us</a>
+          <Link to="/page">
+            <a className="hover:text-blue-600 cursor-pointer">About</a>
+          </Link>
 
           {/* Divider */}
           <div className="border-t border-gray-300 dark:border-gray-600 my-2" />
