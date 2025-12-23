@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function OnboardingFlow() {
+export default function Onboarding() {
   const [step, setStep] = useState(1);
   const [selected, setSelected] = useState(null);
 
