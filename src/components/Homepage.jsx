@@ -39,7 +39,7 @@ function Nav({ menuOpen, setMenuOpen, dark, setDark }) {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <div className="text-2xl font-bold">Portify</div>
 
-        {/* Desktop */}
+        {/* Desktop 
         <div className="hidden md:flex items-center gap-6">
           <Dropdown
             label="Products"
@@ -72,9 +72,7 @@ function Nav({ menuOpen, setMenuOpen, dark, setDark }) {
           </Link>
           <a className="hover:text-blue-600 cursor-pointer">Contact</a>
 
-          {/* <button className="px-4 py-2 bg-blue-600 text-white rounded-lg">
-            Start Building
-          </button> */}
+         
 
           <button
             onClick={() => setDark(!dark)}
@@ -83,19 +81,17 @@ function Nav({ menuOpen, setMenuOpen, dark, setDark }) {
             {dark ? <Sun size={18} /> : <Moon size={18} />}
           </button>
         </div>
+        */}
 
         {/* Mobile toggle */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden p-2"
-        >
+        <button onClick={() => setMenuOpen(!menuOpen)} className="p-2">
           <Menu size={28} />
         </button>
       </div>
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden fixed top-0 right-0 h-full w-72 bg-white dark:bg-gray-800 shadow-lg transform transition-transform duration-300 ${
+        className={` fixed top-0 right-0 h-full w-72 bg-white dark:bg-gray-800 shadow-lg transform transition-transform duration-300 ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
